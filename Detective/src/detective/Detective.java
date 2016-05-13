@@ -5,6 +5,7 @@
  */
 package detective;
 
+import detective.model.Location;
 import detective.model.Player;
 
 /**
@@ -17,13 +18,16 @@ public class Detective {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Player playerOne = new Player();
+        Location locationOne = new Location();
         
-        playerOne.setName("Fred Flinstone");
-        playerOne.setBestTime(7.00);
+      
+        locationOne.setVisited(1);
+        locationOne.setAmmountRemaining(24);
+        locationOne.setRow(3);
+        locationOne.setColumn(4);
         
-        String playerInfo = playerOne.toString();
-        System.out.println(playerInfo);
+        String locationInfo = locationOne.toString();
+        System.out.println(locationInfo);
         
     }
     
