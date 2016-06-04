@@ -73,5 +73,21 @@ public class InvestigationControlTest {
         int result = instance.CalcObservationSkill(observationLevel, requirement);
         assertEquals(expResult, result);  
     }
+
+    /**
+     * Test of CalcObservationSkill method, of class InvestigationControl.
+     */
+    @Test
+    public void testCalcObservationSkill() {
+        System.out.println("CalcObservationSkill");
+        int observationLevel = 0;
+        int requirement = 0;
+        InvestigationControl instance = new InvestigationControl();
+        int expResult = 0;
+        int result = instance.CalcObservationSkill(observationLevel, requirement);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
     }
     

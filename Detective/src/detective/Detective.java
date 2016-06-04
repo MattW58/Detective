@@ -5,30 +5,37 @@
  */
 package detective;
 
-import detective.model.Location;
+import detective.model.Game;
+import detective.view.StartProgramView;
 import detective.model.Player;
-
-/**
- *
- * @author Matt
- */
+        
 public class Detective {
-
+    
+    private static Game currentGame = null;
+    private static Player player = null;
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Location locationOne = new Location();
+       StartProgramView startProgramView = new StartProgramView();
+       startProgramView.displayStartProgramView();
         
-      
-        locationOne.setVisited(1);
-        locationOne.setAmmountRemaining(24);
-        locationOne.setRow(3);
-        locationOne.setColumn(4);
-        
-        String locationInfo = locationOne.toString();
-        System.out.println(locationInfo);
-        
+    }
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        Detective.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        Detective.player = player;
     }
     
 }
