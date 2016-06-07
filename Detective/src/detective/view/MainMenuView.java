@@ -90,14 +90,14 @@ public class MainMenuView {
     private void startNewGame() {
         GameControl.createNewGame(Detective.getPlayer());
 
-        GameMenuView gameMenu = GameMenuView();
+        GameMenuView gameMenu = new GameMenuView();
         gameMenu.displayMenu();
     
     }
 
     private void startExistingGame() {
       
-       
+       System.out.println();
     }
 
     private void saveGame() {
@@ -110,9 +110,7 @@ public class MainMenuView {
         helpMenuView.displayHelpMenuView();
     }
 
-    private GameMenuView GameMenuView() {
-        
-    }
+    
 
    
 
