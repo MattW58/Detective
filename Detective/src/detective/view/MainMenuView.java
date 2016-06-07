@@ -7,6 +7,7 @@ package detective.view;
 
 import detective.Detective;
 import detective.control.GameControl;
+import static detective.view.CreditsMenuView.creditsMenuView;
 import static detective.view.HelpMenuView.helpMenuView;
 import java.util.Scanner;
 
@@ -27,6 +28,7 @@ public class MainMenuView {
         "2 - Load Game\n" + 
         "3 - Save Game\n" + 
         "4 - Quit Game\n" +
+        "5 - Credits\n" +
         "H - Help\n"  ;
     };
 
@@ -77,6 +79,9 @@ public class MainMenuView {
             case "3":
                 this.saveGame();
                 break;
+            case "5":
+                this.displayCreditsMenu();
+                break;
             case "H":
                 this.displayHelpMenu();
                 break;
@@ -111,6 +116,12 @@ public class MainMenuView {
     }
 
     
+
+    private void displayCreditsMenu() {
+        CreditsMenuView.creditsMenuView = new CreditsMenuView();
+          
+        creditsMenuView.displayCreditsMenuView();
+    }
 
    
 
