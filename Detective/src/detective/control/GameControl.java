@@ -31,4 +31,8 @@ public class GameControl {
     System.out.println("create newa game called");
     }
     
+    public static void loadExistingGame(String gameFile) {
+        System.out.println("Game File called");
+    }
 }
+

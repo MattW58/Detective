@@ -89,13 +89,15 @@ public class MainMenuView {
 
     private void startNewGame() {
         GameControl.createNewGame(Detective.getPlayer());
-        
+
         GameMenuView gameMenu = GameMenuView();
         gameMenu.displayMenu();
+    
     }
 
     private void startExistingGame() {
-        
+      
+       
     }
 
     private void saveGame() {
@@ -109,9 +111,12 @@ public class MainMenuView {
     }
 
     private GameMenuView GameMenuView() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
+   
+
+    
   
 
     
