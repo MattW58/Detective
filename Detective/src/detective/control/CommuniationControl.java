@@ -15,21 +15,23 @@ public class CommuniationControl {
             return -1;
         }
         
-        if (communicationLevel > 20 || requirement > 20) {
+        else if (communicationLevel > 20 || requirement > 20) {
 		return -1;
                }
         
-        double X = (communicationLevel + 2 ) * 0.5;
+        double X = (communicationLevel * 2 ) * 0.5;
         
-	if (X >=  requirement) {
+        if (X >=  requirement) {
             return 1;
                 }
         
-        if (X < requirement) {
+        else if (X < requirement) {
 	    return 0;
             }
         
-        return 0;
+        else { 
+            return 0;
+        }
     }
     
     
