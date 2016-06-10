@@ -91,6 +91,26 @@ public class MainMenuView {
         }
        return false;    
     }
+    
+    public String getInput() {
+        Scanner keyboard = new Scanner(System.in);
+        boolean valid = false;
+        String selection = null;
+        
+        while (!valid) {
+            
+            selection = keyboard.nextLine();
+            selection = selection.trim();
+            
+            if (selection.length() < 1) {
+                System.out.println("\n*** Invalid selection *** Try again");
+                continue;
+                
+            }
+            break;
+        }
+        return selection;
+    }
 
     private void startNewGame() {
         GameControl.createNewGame(Detective.getPlayer());
