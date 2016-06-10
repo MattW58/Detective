@@ -19,7 +19,7 @@ public class GameMenuView {
     private String choice;
 
     public GameMenuView() {
-        this.menu = "\n\n   Game Menu\n\n" + 
+        this.menu = "\n\n   Game Menu\n\n" +
         "I - Items\n" +
         "N - Notes\n" + 
         "S - Save Game\n" + 

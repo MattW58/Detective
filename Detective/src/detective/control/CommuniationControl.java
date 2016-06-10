@@ -10,7 +10,7 @@ package detective.control;
  * @author Matt
  */
 public class CommuniationControl {
-    public int CalcObservationSkill(int communicationLevel, int requirement) { 
+    public int CalcCommunicationSkill(int communicationLevel, int requirement) { 
 	if (communicationLevel < 0 || requirement < 0) {
             return -1;
         }
