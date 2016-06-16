@@ -15,41 +15,27 @@ import java.util.Scanner;
  *
  * @author Matt
  */
-public class MainMenuView {
+public class MainMenuView extends View {
 
     static MainMenuView mainMenuView;
     
-    private String menu;
     private String choice;
 
     public MainMenuView() {
-        this.menu = "\n\n   Main Menu\n\n" + 
+    super("\n\n   Main Menu\n\n" + 
         "1 - New Game\n" +
         "2 - Load Game\n" + 
         "3 - Save Game\n" + 
-        "4 - Quit Game\n" +
-        "5 - Credits\n" +
-        "H - Help\n"  ;
+        "4 - Credits\n" +
+        "Q - Quit Game\n" +
+        "H - Help\n"  );
     };
 
- 
-    public void displayMainMenuView() {
-        boolean done = false;
-        do {
-            String menuOption = this.getMenuOption();
-            if (menuOption.equals("4"))
-                return;
-            
-            done = this.doAction(menuOption);
-        }
-        while (!done);
-    }
-
     private String getMenuOption() {
-         Scanner keyboard = new Scanner(System.in);
+       Scanner keyboard = new Scanner(System.in);
        String value = "";
        boolean valid = false;
-       System.out.println(this.menu);
+       System.out.println(this.displayMessage);
        
        while (!valid) {
            System.out.println("\n Please select a menu option and press enter");
@@ -65,11 +51,12 @@ public class MainMenuView {
        }
        return value;
     }
-
-    private boolean doAction(String choice) {
-        choice = choice.toUpperCase();
+    
+    @Override
+    public boolean doAction(String value) {
+        value = value.toUpperCase();
         
-        switch (choice) {
+        switch (value) {
             case "1":
                 this.startNewGame();
                 break;
@@ -79,7 +66,7 @@ public class MainMenuView {
             case "3":
                 this.saveGame();
                 break;
-            case "5":
+            case "4":
                 this.displayCreditsMenu();
                 break;
             case "H":
@@ -92,25 +79,6 @@ public class MainMenuView {
        return false;    
     }
     
-    public String getInput() {
-        Scanner keyboard = new Scanner(System.in);
-        boolean valid = false;
-        String selection = null;
-        
-        while (!valid) {
-            
-            selection = keyboard.nextLine();
-            selection = selection.trim();
-            
-            if (selection.length() < 1) {
-                System.out.println("\n*** Invalid selection *** Try again");
-                continue;
-                
-            }
-            break;
-        }
-        return selection;
-    }
 
     private void startNewGame() {
         GameControl.createNewGame(Detective.getPlayer());
