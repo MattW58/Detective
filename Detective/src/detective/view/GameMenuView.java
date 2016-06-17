@@ -22,7 +22,8 @@ public class GameMenuView extends View {
         super( "\n\n   Game Menu\n\n" +
         "I - Items\n" +
         "N - Notes\n" +
-        "D - Damage Output" +        
+        "D - Damage Output" +  
+        "O - Investigation" + 
         "S - Save Game\n" + 
         "Q - Quit Game\n");
     };
@@ -40,6 +41,9 @@ public class GameMenuView extends View {
                 break;
             case "D":
                 this.showDamage();
+                break;
+            case "O":
+                this.investigate();
                 break;
             case "S":
                 this.saveGame();
@@ -71,5 +75,9 @@ public class GameMenuView extends View {
 
     private void showDamage() {
         System.out.println("Show the damage dealt");
+    }
+
+    private void investigate() {
+        System.out.println("investigation scene");
     }
 }
