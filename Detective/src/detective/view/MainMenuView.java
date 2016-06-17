@@ -19,7 +19,6 @@ public class MainMenuView extends View {
 
     static MainMenuView mainMenuView;
     
-    private String choice;
 
     public MainMenuView() {
     super("\n\n   Main Menu\n\n" + 
@@ -28,7 +27,8 @@ public class MainMenuView extends View {
         "3 - Save Game\n" + 
         "4 - Credits\n" +
         "Q - Quit Game\n" +
-        "H - Help\n"  );
+        "H - Help\n" +
+        "\n Please select a menu option and press enter");
     };
 
     private String getMenuOption() {
@@ -38,7 +38,6 @@ public class MainMenuView extends View {
        System.out.println(this.displayMessage);
        
        while (!valid) {
-           System.out.println("\n Please select a menu option and press enter");
            
            value = keyboard.nextLine();
            value = value.trim();
@@ -100,7 +99,7 @@ public class MainMenuView extends View {
     private void displayHelpMenu() {
         HelpMenuView.helpMenuView = new HelpMenuView();
           
-        helpMenuView.displayHelpMenuView();
+        helpMenuView.display();
     }
 
     
@@ -108,7 +107,7 @@ public class MainMenuView extends View {
     private void displayCreditsMenu() {
         CreditsMenuView.creditsMenuView = new CreditsMenuView();
           
-        creditsMenuView.displayCreditsMenuView();
+        creditsMenuView.display();
     }
 
    

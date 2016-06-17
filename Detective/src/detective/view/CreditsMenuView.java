@@ -11,43 +11,27 @@ import java.util.Scanner;
  *
  * @author Matt
  */
-public class CreditsMenuView {
+public class CreditsMenuView extends View {
     
     static CreditsMenuView creditsMenuView;
-    
-    private String menu;
-    private String choice;
      
     public CreditsMenuView() {
-        this.menu = "\n\n      Credits\n\n" + 
+        super("\n\n      Credits\n\n" + 
         "      Authors\n\n" +
         "  Brandon Taylor & Matt Williamson\n" + 
         "   from BYUI, CIT 260\n\n" + 
         "      Special Thanks\n\n" +
-        "  Brother Kent Jackson\n\n" ;
+        "  Brother Kent Jackson\n\n" +
+        "\n Here are the credits, enter Q to exit or A for an achievement");
     };
-
- 
-    public void displayCreditsMenuView() {
-        boolean done = false;
-        do {
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("E"))
-                return;
-            
-            done = this.doAction(menuOption);
-        }
-        while (!done);
-    }
     
     private String getMenuOption() {
          Scanner keyboard = new Scanner(System.in);
        String value = "";
        boolean valid = false;
-       System.out.println(this.menu);
+       System.out.println(this.displayMessage);
        
        while (!valid) {
-           System.out.println("\n Here are the credits, enter E to exit or A for an achievement");
            
            value = keyboard.nextLine();
            value = value.trim();
@@ -61,10 +45,11 @@ public class CreditsMenuView {
        return value;
     }
 
-    private boolean doAction(String choice) {
-        choice = choice.toUpperCase();
+    @Override
+    public boolean doAction(String value) {
+        value = value.toUpperCase();
         
-        switch (choice) {
+        switch (value) {
             case "A":
                 this.achievementGet();
                 break;    
@@ -76,6 +61,6 @@ public class CreditsMenuView {
     }
 
     private void achievementGet() {
-        System.out.println("ACHIEVEMENT GET!!\nToo bad it doesn't do anything for you.");
+        System.out.println("\n\nACHIEVEMENT GET!!\nToo bad it doesn't do anything for you.");
     }
 }
