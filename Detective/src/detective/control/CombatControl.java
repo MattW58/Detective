@@ -10,6 +10,11 @@ package detective.control;
  * @author 56165320013
  */
 public class CombatControl {
+
+    public static double calcCombatSkill(double combatLevel, double requirement) {
+        System.out.println("The damage was calculated");
+        return 0;
+    }
     public int CalcCombatSkill(int combatLevel, int requirement) {
 	
         if (combatLevel < 0 || requirement < 0) {
