@@ -5,6 +5,7 @@
  */
 package detective.view;
 
+import static detective.view.InvestigationAView.investigationAView;
 import java.util.Scanner;
 
 /**
@@ -78,6 +79,8 @@ public class GameMenuView extends View {
     }
 
     private void investigate() {
-        System.out.println("investigation scene");
+        InvestigationAView.investigationAView = new InvestigationAView();
+          
+        investigationAView.display();
     }
 }
