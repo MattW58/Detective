@@ -21,7 +21,6 @@ public class CombatView extends View{
     
     @Override
     public boolean doAction(String value) {
-        double base = Double.parseDouble(value);
         
         this.displayMessage = "\n Your skill level will now be compared with the enemy's";
         String value2 = this.getInput();
