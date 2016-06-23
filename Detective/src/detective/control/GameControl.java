@@ -6,6 +6,9 @@
 package detective.control;
 
 import detective.Detective;
+import detective.model.Game;
+import detective.model.Inventory;
+import detective.model.Map;
 import detective.model.Player;
 
 /**
@@ -13,6 +16,7 @@ import detective.model.Player;
  * @author Matt
  */
 public class GameControl {
+    
 
     public static Player createPlayer(String name) {
        if (name == null) {
@@ -27,8 +31,25 @@ public class GameControl {
        return player;
     }
 
-    public static void createNewGame(Player player) {
-    System.out.println("create newa game called");
+    public static void createNewGame(Player player) throws MapControl.MapControlException {
+    Game game = new Game();
+    Detective.setCurrentGame(game);
+    
+    game.setPlayer(player);
+    
+    Inventory[] inventoryList = GameControl.createInventoryList();
+    game.setInventory(inventoryList);
+    
+    Map map = MapControl.createMap();
+    game.setMap(map);
+    
+    MapControl.moveActorsToStartingLocation(map);
+    
+    }
+    
+    public static Inventory[] createInventoryList() {
+        System.out.println("Called createInventoryList() in GameControl");
+        return null;
     }
     
     public static void loadExistingGame(String gameFile) {

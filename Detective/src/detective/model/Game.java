@@ -15,6 +15,14 @@ public class Game implements Serializable{
      private int noPeople;
      private double totalTime;
      
+     private Inventory[] inventory;
+     private Player player;
+     private Character character;
+     private Map map;
+     private Location[] location;
+     private CombatScene combatScene;
+     private InvestigationScene investigationScene;
+     
      public Game() {
        }
 
@@ -34,6 +42,57 @@ public class Game implements Serializable{
         this.totalTime = totalTime;
     }
 
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Inventory[] getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory[] Inventory) {
+        this.inventory = Inventory;
+    }
+
+    public Character getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character character) {
+        this.character = character;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    public CombatScene getCombatScene() {
+        return combatScene;
+    }
+
+    public void setCombatScene(CombatScene combatScene) {
+        this.combatScene = combatScene;
+    }
+
+    public InvestigationScene getInvestigationScene() {
+        return investigationScene;
+    }
+
+    public void setInvestigationScene(InvestigationScene investigationScene) {
+        this.investigationScene = investigationScene;
+    }
+    
+    
+
+    
     @Override
     public int hashCode() {
         int hash = 3;
