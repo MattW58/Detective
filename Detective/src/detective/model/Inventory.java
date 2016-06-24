@@ -81,6 +81,42 @@ public class Inventory implements Serializable{
         return "Inventory{" + "nameOfItem=" + nameOfItem + ", itemType=" + itemType + ", requiredAmmount=" + requiredAmmount + '}';
     }
     
-    
+    public static Inventory[] createInventoryList() {
+        
+        Inventory[] inventory =
+                new Inventory[5];
+        
+        Inventory pistol = new Inventory();
+        pistol.setDescription("Pistol");
+        pistol.setQuantityInStock(1);
+        pistol.setRequiredAmount(1);
+        inventory[0] = pistol;
+        
+        Inventory badge = new Inventory();
+        badge.setDescription("Badge");
+        badge.setQuantityInStock(1);
+        badge.setRequiredAmount(1);
+        inventory[1] = badge;
+        
+        Inventory brassKnuckles = new Inventory();
+        brassKnuckles.setDescription("Brass Knuckles");
+        brassKnuckles.setQuantityInStock(1);
+        brassKnuckles.setRequiredAmount(1);
+        inventory[2] = brassKnuckles;
+        
+        Inventory evidenceOne = new Inventory();
+        evidenceOne.setDescription("Evidence One");
+        evidenceOne.setQuantityInStock(0);
+        evidenceOne.setRequiredAmount(1);
+        inventory[3] = evidenceOne;
+        
+        Inventory evidenceTwo = new Inventory();
+        evidenceTwo.setDescription("Evidence Two");
+        evidenceTwo.setQuantityInStock(0);
+        evidenceTwo.setRequiredAmount(1);
+        inventory[4] = evidenceTwo;
+        
+        return inventory;
+    }
     
 }
