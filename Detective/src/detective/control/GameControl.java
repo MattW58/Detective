@@ -10,6 +10,7 @@ import detective.model.Game;
 import detective.model.Inventory;
 import detective.model.Map;
 import detective.model.Player;
+import detective.model.Scene;
 
 /**
  *
@@ -31,7 +32,7 @@ public class GameControl {
        return player;
     }
 
-    public static void createNewGame(Player player) throws MapControl.MapControlException {
+    public static void createNewGame(Player player) {
     Game game = new Game();
     Detective.setCurrentGame(game);
     
@@ -54,6 +55,10 @@ public class GameControl {
     
     public static void loadExistingGame(String gameFile) {
         System.out.println("Game File called");
+    }
+
+    public static void assignScenesToLocations(Map map, Scene[] scenes) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
 

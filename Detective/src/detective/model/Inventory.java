@@ -90,33 +90,52 @@ public class Inventory implements Serializable{
         pistol.setDescription("Pistol");
         pistol.setQuantityInStock(1);
         pistol.setRequiredAmount(1);
-        inventory[0] = pistol;
+        inventory[InventoryEnum.pistol.ordinal()] = pistol;
         
         Inventory badge = new Inventory();
         badge.setDescription("Badge");
         badge.setQuantityInStock(1);
         badge.setRequiredAmount(1);
-        inventory[1] = badge;
+        inventory[InventoryEnum.badge.ordinal()] = badge;
         
         Inventory brassKnuckles = new Inventory();
         brassKnuckles.setDescription("Brass Knuckles");
         brassKnuckles.setQuantityInStock(1);
         brassKnuckles.setRequiredAmount(1);
-        inventory[2] = brassKnuckles;
+        inventory[InventoryEnum.brassKnuckles.ordinal()] = brassKnuckles;
         
         Inventory evidenceOne = new Inventory();
         evidenceOne.setDescription("Evidence One");
         evidenceOne.setQuantityInStock(0);
         evidenceOne.setRequiredAmount(1);
-        inventory[3] = evidenceOne;
+        inventory[InventoryEnum.evidenceOne.ordinal()] = evidenceOne;
         
         Inventory evidenceTwo = new Inventory();
         evidenceTwo.setDescription("Evidence Two");
         evidenceTwo.setQuantityInStock(0);
         evidenceTwo.setRequiredAmount(1);
-        inventory[4] = evidenceTwo;
+        inventory[InventoryEnum.evidenceTwo.ordinal()] = evidenceTwo;
         
         return inventory;
+    }
+
+    private void setDescription(String pistol) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void setQuantityInStock(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void setRequiredAmount(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    public enum InventoryEnum {
+    pistol,
+    badge,
+    brassKnuckles,
+    evidenceOne,
+    evidenceTwo;
     }
     
 }

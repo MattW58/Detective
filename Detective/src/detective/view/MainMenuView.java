@@ -7,6 +7,7 @@ package detective.view;
 
 import detective.Detective;
 import detective.control.GameControl;
+import detective.control.MapControl;
 import static detective.view.CreditsMenuView.creditsMenuView;
 import static detective.view.HelpMenuView.helpMenuView;
 import java.util.Scanner;

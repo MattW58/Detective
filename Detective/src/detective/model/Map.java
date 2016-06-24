@@ -5,6 +5,7 @@
  */
 package detective.model;
 
+import detective.control.GameControl;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -13,11 +14,35 @@ import java.util.Objects;
  * @author Matt
  */
 public class Map implements Serializable{
+
+    private static Scene[] createScenes() {
+        System.out.println("sceneamabob"); 
+        return scenes;
+    }
     
     private int rowCount;
     private int columnCount;
+    private Location[][] locations;
 
-    public Map() {
+    public Map(int rowCount, int columnCount) {
+        if (rowCount < 1 || columnCount < 1 || rowCount > 5 || columnCount > 5) {
+        System.out.println("the rows and columns must be greater than 0 and less than 5.");
+        return;
+        }
+        
+        this.columnCount = columnCount;
+        this.rowCount = rowCount;
+        this.locations = new Location[rowCount][columnCount];
+        
+        for (int row = 0; row < rowCount; row++){
+          for (int column = 0; column < columnCount; column++) {
+             Location location = new Location();
+             location.setColumn(column);
+             location.setRow(row);
+             location.setVisited(false);
+             locations[row][column] = location;
+          }
+        }
     }
 
     public int getRowCount() {
@@ -70,6 +95,15 @@ public class Map implements Serializable{
         return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
     }
     
+    private static Map createMap() {
+        Map map = new Map(5, 5);
+        
+        Scene[] scenes = createScenes();
+        
+        GameControl.assignScenesToLocations(map, scenes);
+        
+        return map;
+    }
     
     
 }

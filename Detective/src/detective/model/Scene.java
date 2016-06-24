@@ -82,6 +82,27 @@ public class Scene implements Serializable{
         return "Scene{" + "description=" + description + ", blockedLocation=" + blockedLocation + ", displaySymbol=" + displaySymbol + '}';
     }
         
-        
+        private static Scene[] createScenes() {
+            
+            Scene[] scenes = new Scene[SceneType.values().length];
+            
+            Scene startingScene = new Scene();
+            startingScene.setDescription(
+            ""
+            );
+            
+            
+            return scenes;
+        }
     
+        public enum SceneType {
+            start,
+            conversation,
+            standard,
+            combat,
+            investigation,
+            finish,
+            enter,
+            exit;
+        }
 }

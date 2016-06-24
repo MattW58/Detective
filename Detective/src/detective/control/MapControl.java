@@ -12,7 +12,7 @@ import detective.model.Map;
  * @author 56165320013
  */
 public class MapControl {
-    public static Map createMap() throws MapControlException {
+    public static Map createMap() {
         
         Map map = null;
         
@@ -22,12 +22,7 @@ public class MapControl {
     }
 
     static void moveActorsToStartingLocation(Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public static class MapControlException extends Exception {
-
-        public MapControlException() {
-        }
+        System.out.println("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
+

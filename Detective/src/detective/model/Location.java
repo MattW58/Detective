@@ -6,6 +6,7 @@
 package detective.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -15,8 +16,10 @@ public class Location implements Serializable {
     
     private int row;
     private int column;
-    private int visited;
+    private boolean visited;
     private int ammountRemaining;
+    private Scene scene;
+    private ArrayList<Character> character;
 
     public Location() {
     }
@@ -37,11 +40,11 @@ public class Location implements Serializable {
         this.column = column;
     }
 
-    public int getVisited() {
+    public boolean getVisited() {
         return visited;
     }
 
-    public void setVisited(int visited) {
+    public void setVisited(boolean visited) {
         this.visited = visited;
     }
 
@@ -58,7 +61,6 @@ public class Location implements Serializable {
         int hash = 5;
         hash = 97 * hash + this.row;
         hash = 97 * hash + this.column;
-        hash = 97 * hash + this.visited;
         hash = 97 * hash + this.ammountRemaining;
         return hash;
     }
