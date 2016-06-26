@@ -104,6 +104,10 @@ public class Map implements Serializable{
         
         return map;
     }
+
+    Location[][] getLocations() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }
