@@ -120,15 +120,30 @@ public class Inventory implements Serializable{
     }
 
     private void setDescription(String pistol) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Shows description of pistol");
     }
 
     private void setQuantityInStock(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Shows Quantity in Stock");
     }
 
     private void setRequiredAmount(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Shows Required Amount");
+    }
+
+    public Object getDescription() {
+        System.out.println("Shows description");
+        return null;
+    }
+
+    public Object getRequiredAmount() {
+        System.out.println("Shows description");
+        return null;
+    }
+
+    public Object getQuiantityInStock() {
+        System.out.println("Shows description");
+        return null;
     }
     public enum InventoryEnum {
     pistol,

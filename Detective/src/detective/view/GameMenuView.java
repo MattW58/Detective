@@ -5,6 +5,9 @@
  */
 package detective.view;
 
+import detective.Detective;
+import detective.model.Game;
+import detective.model.Inventory;
 import static detective.view.InvestigationAView.investigationAView;
 import java.util.Scanner;
 
@@ -21,6 +24,7 @@ public class GameMenuView extends View {
 
     public GameMenuView() {
         super( "\n\n   Game Menu\n\n" +
+        "V - View Map\n" +
         "I - Items\n" +
         "N - Notes\n" +
         "D - Damage Output" +  
@@ -34,6 +38,9 @@ public class GameMenuView extends View {
         value = value.toUpperCase();
         
         switch (value) {
+            case "V":
+                this.displayMap();
+                break;
             case "I":
                 this.showItems();
                 break;
@@ -57,7 +64,28 @@ public class GameMenuView extends View {
     }
 
     private void showItems() {
-        System.out.println("List of Items");
+        StringBuilder line;
+        
+        Game game = Detective.getCurrentGame();
+        Inventory[] inventory = game.getInventory();
+        
+        System.out.println("\n     List of Inventory Items");
+        line = new StringBuilder("                                       ");
+        line.insert(0, "DESCRIPTION");
+        line.insert(20, "REQUIRED");
+        line.insert(30, "IN STOCK");
+        System.out.println(line.toString());
+        
+        for (Inventory item : inventory) {
+            line = new StringBuilder("                                       ");
+        line.insert(0, item.getDescription());
+        line.insert(23, item.getRequiredAmount());
+        line.insert(33, item.getQuiantityInStock());
+        
+        System.out.println(line.toString());
+        
+        }
+        
     }
 
     private void showNotes() {
@@ -82,5 +110,9 @@ public class GameMenuView extends View {
         InvestigationAView.investigationAView = new InvestigationAView();
           
         investigationAView.display();
+    }
+
+    private void displayMap() {
+        System.out.println("\nDisplays the map");
     }
 }

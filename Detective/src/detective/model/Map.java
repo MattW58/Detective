@@ -15,6 +15,8 @@ import java.util.Objects;
  */
 public class Map implements Serializable{
 
+    private static Scene[] scenes;
+
     private static Scene[] createScenes() {
         System.out.println("sceneamabob"); 
         return scenes;
