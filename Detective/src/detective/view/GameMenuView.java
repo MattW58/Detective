@@ -27,8 +27,8 @@ public class GameMenuView extends View {
         "V - View Map\n" +
         "I - Items\n" +
         "N - Notes\n" +
-        "D - Damage Output" +  
-        "O - Investigation" + 
+        "D - Damage Output\n" +  
+        "O - Investigation\n" + 
         "S - Save Game\n" + 
         "Q - Quit Game\n");
     };
@@ -77,7 +77,7 @@ public class GameMenuView extends View {
         System.out.println(line.toString());
         
         for (Inventory item : inventory) {
-            line = new StringBuilder("                                       ");
+        line = new StringBuilder("                                    ");
         line.insert(0, item.getDescription());
         line.insert(23, item.getRequiredAmount());
         line.insert(33, item.getQuiantityInStock());
@@ -112,7 +112,7 @@ public class GameMenuView extends View {
         investigationAView.display();
     }
 
-    private void displayMap() {
+    public void displayMap() {
         System.out.println("\nDisplays the map");
     }
 }
