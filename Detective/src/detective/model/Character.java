@@ -13,6 +13,10 @@ import java.util.Objects;
  * @author Matt
  */
 public class Character implements Serializable{
+
+    public static Character[] values() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     private String name;
     private String description;

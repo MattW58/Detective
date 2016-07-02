@@ -24,9 +24,10 @@ public class CombatView extends View{
         
         this.displayMessage = "\n Your skill level will now be compared with the enemy's";
         String value2 = this.getInput();
+        
         double combatLevel = Double.parseDouble(value2);
         double requirement = Double.parseDouble(value2);
-        
+       
         double damage = CombatControl.calcCombatSkill(combatLevel, requirement);
                 
         if (damage < 0) {
