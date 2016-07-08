@@ -5,6 +5,7 @@
  */
 package detective.view;
 
+import detective.Detective;
 import java.util.Scanner;
 
 /**
@@ -14,6 +15,10 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
     
     protected String displayMessage;
+    
+    protected final BufferedReader keyboard = Detective.getInFile();
+    protected final java.io.PrintWriter console = Detective.getOutFile();
+    
     
     public View() {    
     }
@@ -38,14 +43,14 @@ public abstract class View implements ViewInterface {
     
     @Override
     public String getInput() {
-       Scanner keyboard = new Scanner(System.in);
+       
        String value = null;
        boolean valid = false;
        
        while (!valid) {
            System.out.println("\n" + this.displayMessage);
            
-           value = keyboard.nextLine();
+           value = keyboard.readLine();
            value = value.trim();
            
            if (value.length() < 1) {
@@ -55,6 +60,22 @@ public abstract class View implements ViewInterface {
            break;
        }
        return value;
+    }
+
+    public static class BufferedReader {
+
+        public BufferedReader() {
+        }
+
+        public String readLine() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+    }
+
+    private static class PrintWriter {
+
+        public PrintWriter() {
+        }
     }
 
 }

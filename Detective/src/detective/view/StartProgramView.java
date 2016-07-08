@@ -86,14 +86,14 @@ public class StartProgramView extends View{
     }
 
     private String getPlayersName() {
-       Scanner keyboard = new Scanner(System.in);
+       
        String value = "";
        boolean valid = false;
        
        while (!valid) {
            System.out.println("\n" + this.promptMessage);
            
-           value = keyboard.nextLine();
+           value = keyboard.readLine();
            value = value.trim();
            
            if (value.length() < 1) {

@@ -26,14 +26,14 @@ public class HelpMenuView extends View{
     };
 
     private String getMenuOption() {
-         Scanner keyboard = new Scanner(System.in);
+         
        String value = "";
        boolean valid = false;
        System.out.println(this.displayMessage);
        
        while (!valid) {
            
-           value = keyboard.nextLine();
+           value = keyboard.readLine();
            value = value.trim();
            
            if (value.length() < 1) {
