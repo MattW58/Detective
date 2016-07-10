@@ -48,13 +48,13 @@ public abstract class View implements ViewInterface {
        boolean valid = false;
        
        while (!valid) {
-           System.out.println("\n" + this.displayMessage);
+           this.console.println("\n" + this.displayMessage);
            
            value = keyboard.readLine();
            value = value.trim();
            
            if (value.length() < 1) {
-               System.out.println("\nGotta make a choice, a stand, right here and now, there's no turning back...\nSorry I was talking to myself, please enter a valid option.");
+               this.console.println("\nGotta make a choice, a stand, right here and now, there's no turning back...\nSorry I was talking to myself, please enter a valid option.");
                continue;
            }
            break;
