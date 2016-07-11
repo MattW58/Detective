@@ -29,6 +29,7 @@ public class GameMenuView extends View {
         "N - Notes\n" +
         "D - Damage Output\n" +  
         "O - Investigation\n" + 
+        "P - Print Report\n" +
         "S - Save Game\n" + 
         "Q - Quit Game\n");
     };
@@ -52,6 +53,9 @@ public class GameMenuView extends View {
                 break;
             case "O":
                 this.investigate();
+                break;
+            case "P":
+                this.PrintReport();
                 break;
             case "S":
                 this.saveGame();
@@ -114,5 +118,9 @@ public class GameMenuView extends View {
 
     public void displayMap() {
         System.out.println("\nDisplays the map");
+    }
+
+    private void PrintReport() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
