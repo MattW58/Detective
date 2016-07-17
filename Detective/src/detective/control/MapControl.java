@@ -55,11 +55,12 @@ public class MapControl  {
     }
 
     private static int moveActorToLocation(Character character, Point coordinates) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        return 0;
     }
 
     private static void moveActorToLocation(Character character, String coordinates) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 }
 
